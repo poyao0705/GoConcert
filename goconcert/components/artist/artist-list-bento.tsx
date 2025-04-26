@@ -10,48 +10,17 @@ import {
   IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
-import { ArtistFilter } from "@/types/artist";
-import axios from "axios";
 import { Artist } from "@/types/artist";
 import { Genre } from "@/types/genre";
 import Image from "next/image";
 
-// interface ArtistListProps {
-//     filters: ArtistFilter;
-// }
 interface ArtistListProps {
     artists: Artist[];
     genres: Genre[];
 }
-// {filters}: ArtistListProps
 export function ArtistListBento({artists, genres}: ArtistListProps) {
-    // const [artists, setArtists] = useState<Artist[]>([]);
-    // const [loading, setLoading] = useState(false);
-    // const [genres, setGenres] = useState<Genre[]>([]);
-    // const fetchFilteredArtists = async () => {
-    //     setLoading(true);
-    //     const res = await axios.post('/api/artists', { filters });
-    //     setArtists(res.data);
-    //     setLoading(false);
-    // };
-
-    // fetch the genres
-    // const fetchGenres = async () => {
-    //     const res = await axios.get('/api/genres');
-    //     setGenres(res.data);
-    // };
-    // fetch the genres when the component mounts and only once
-    // useEffect(() => {
-    //     fetchGenres();
-    // }, []); 
-
-    // fetch the filtered artists when the filters change
-    // useEffect(() => {
-    //     fetchFilteredArtists();
-    // }, [filters]);
 
     return (
-      // loading ? <div>Loading...</div> :
       <BentoGrid className="w-full">
         {artists.map((artist) => (
           <BentoGridItem
@@ -61,7 +30,7 @@ export function ArtistListBento({artists, genres}: ArtistListProps) {
             header={
               <div className="relative w-full h-full min-h-[12rem] min-w-[20rem] overflow-hidden rounded-t-xl">
                 <Image
-                  src={artist.image_source || `https://source.unsplash.com/random/800x600?${encodeURIComponent(artist.artist_name)}`} // or skeleton
+                  src={artist.image_source || `https://www.flaticon.com/free-icon/artist_2989859?term=artist&page=1&position=21&origin=search&related_id=2989859`} // or skeleton
                   alt={artist.artist_name}
                   fill
                   style={{ objectFit: 'cover' }}
