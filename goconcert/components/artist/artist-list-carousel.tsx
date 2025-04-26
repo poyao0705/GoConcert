@@ -3,7 +3,6 @@
 import { Card, Carousel } from "../ui/apple-cards-carousal";
 import axios from "axios";
 import { Artist } from "@/types/artist";
-import { ArtistFilter } from "@/types/artist-filter";
 import { useEffect, useState } from "react";
 
 interface ArtistListProps {

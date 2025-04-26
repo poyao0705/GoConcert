@@ -1,7 +1,7 @@
 // app/api/artists/route.ts
 import { NextResponse } from "next/server";
 import { createClient } from "@/utils/supabase/server";
-import { ArtistFilter } from '@/types/artist-filter';
+import { ArtistFilter } from '@/types/artist';
 
 export async function POST(request: Request) {
     const { filters = {}, maxItems = 10 }: { filters?: ArtistFilter; maxItems?: number } = await request.json();

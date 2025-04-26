@@ -5,4 +5,11 @@ export type Artist = {
     image_source: string;
     genre_id: number;
   };
+
+export type ArtistFilter = {
+  genre_ids?: number[];
+  countries?: string[];
+  search?: string;
+  popularity_min?: number;
+};
   

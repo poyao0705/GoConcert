@@ -10,7 +10,7 @@ import {
   IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
-import { ArtistFilter } from "@/types/artist-filter";
+import { ArtistFilter } from "@/types/artist";
 import axios from "axios";
 import { Artist } from "@/types/artist";
 import { Genre } from "@/types/genre";
@@ -36,10 +36,14 @@ export function ArtistListBento({filters}: ArtistListProps) {
         const res = await axios.get('/api/genres');
         setGenres(res.data);
     };
+    // fetch the genres when the component mounts and only once
+    useEffect(() => {
+        fetchGenres();
+    }, []); 
 
+    // fetch the filtered artists when the filters change
     useEffect(() => {
         fetchFilteredArtists();
-        fetchGenres();
     }, [filters]);
 
     return (
