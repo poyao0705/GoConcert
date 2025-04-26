@@ -147,14 +147,12 @@ export const Card = ({
             {card.title}
           </motion.p>
         </div>
-        <div className="absolute inset-0 w-full h-full">
-          <BlurImage
-            src={card.src}
-            alt={card.title}
-            fill
-            className="object-cover absolute z-10 inset-0"
-          />
-        </div>
+        <BlurImage
+          src={card.src}
+          alt={card.title}
+          fill
+          className="object-cover absolute z-10 inset-0"
+        />
         <div className="relative z-40 p-4 mt-auto self-end">
           <button className="relative inline-flex h-8 w-50 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
