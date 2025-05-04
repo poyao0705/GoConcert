@@ -21,24 +21,25 @@ interface ArtistListProps {
 export function ArtistListBento({artists, genres}: ArtistListProps) {
 
     return (
-      <BentoGrid className="w-full">
+      <BentoGrid className="w-full max-w-[2000px] mx-auto px-4">
         {artists.map((artist) => (
           <BentoGridItem
             key={artist.artist_id}
             title={artist.artist_name}
             description={genres.find(genre => genre.genre_id === artist.genre_id)?.genre_name}
             header={
-              <div className="relative w-full h-full min-h-[12rem] min-w-[20rem] overflow-hidden rounded-t-xl">
+              <div className="relative w-full h-full aspect-[4/3] overflow-hidden rounded-t-xl">
                 <Image
-                  src={artist.image_source || `https://www.flaticon.com/free-icon/artist_2989859?term=artist&page=1&position=21&origin=search&related_id=2989859`} // or skeleton
+                  src={artist.image_source || `https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
                   alt={artist.artist_name}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{ objectFit: 'cover' }}
                   className="transition-transform duration-500 group-hover/bento:scale-105"
                 />
               </div>
             }
-            className=""
+            className="min-h-[300px]"
           />
         ))}
       </BentoGrid>
